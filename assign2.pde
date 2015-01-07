@@ -167,6 +167,7 @@ void draw(){
                gameState = FROG_DIE;
            }             
            
+           break;
                  
     case GAME_WIN:
         background(0);
