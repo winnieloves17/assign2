@@ -193,21 +193,32 @@ void draw(){
 void keyPressed() {
       if (key == CODED || gameState == GAME_RUN ) {
        switch( keyCode ){
-         
+       
         case UP:
-          frogY -= 32;        
+          frogY -= 32;
+          if(frogY<=0){
+            frogY=0;
+          }
           break;
           
         case DOWN:
           frogY += 32;
+          if(frogY>frogInitY){
+            frogY=frogInitY;
+          }
           break;
-          
         case LEFT:
           frogX -= 32;
+          if(frogX<0){
+            frogX=0;
+          }
           break;
           
         case RIGHT:
           frogX += 32;
+          if(frogX>width-32){
+            frogX=width-32;
+          }          
           break;
     }}
      
