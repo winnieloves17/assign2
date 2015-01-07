@@ -135,33 +135,38 @@ void draw(){
 //rightCar2Y =320; position Y of car4
        
          // car1 hitTest
-         if (frogY == 128 && frogCX == leftCar1X){
-           image(imgDeadFrog,frogX,frogY);
-           life--;
-           gameState = FROG_DIE;
-         }
-
+           if(frogCX>leftCar1X && frogCX<leftCar1X+48 && frogCY>leftCar1Y && frogCY<leftCar1Y+48)
+           {
+             currentTime = millis();
+             image(imgDeadFrog, frogX, frogY);
+             life--;
+             gameState = FROG_DIE;
+           }             
          // car2 hitTest
-         if (frogY == 192 && frogX == rightCar1X){
-           image(imgDeadFrog,frogX,frogY);
-           life--;
-           gameState = FROG_DIE;
-         }
-         
-         // car3 hitTest
-         if (frogY == 256 && frogX == leftCar2X){
-           image(imgDeadFrog,frogX,frogY);
-           life--;
-           gameState = FROG_DIE;
-         }
-         
-         // car4 hitTest
-        if (frogY == 320 && frogX == rightCar2X){ 
-           image(imgDeadFrog,frogX,frogY);
-           life--;
-           gameState = FROG_DIE;
-         }         
-         break;
+           if(frogCX>rightCar1X && frogCX<rightCar1X+48 && frogCY>rightCar1Y && frogCY<rightCar1Y+48)
+           {
+               currentTime = millis();
+               image(imgDeadFrog, frogX, frogY);
+               life--;
+               gameState = FROG_DIE;
+           }             
+           // car3 hitTest
+           if(frogCX>leftCar2X && frogCX<leftCar2X+48 && frogCY>leftCar2Y && frogCY<leftCar2Y+48)
+           {
+               currentTime = millis();
+               image(imgDeadFrog, frogX, frogY);
+               life--;
+               gameState = FROG_DIE;
+           }             
+           // car4 hitTest
+                if(frogCX>rightCar2X && frogCX<rightCar2X+48 && frogCY>rightCar2Y && frogCY<rightCar2Y+48)
+                {
+               currentTime = millis();
+               image(imgDeadFrog, frogX, frogY);
+               life--;
+               gameState = FROG_DIE;
+           }             
+           
                  
     case GAME_WIN:
         background(0);
